@@ -59,7 +59,7 @@ angular
                        scanModel.lastScanned = result.code;
                    $timeout(function() {
                        scanner.resumeScan();
-                   },100);
+                   },50);
                 };
                 scanner.setContinuous(false);
                 scanner.startScanning(function () {}, success, 0, 10, 100, 35);

@@ -1,16 +1,20 @@
 <div class="app-layout panel-body" keep-height>
     <button class="btn btn-primary" ng-click="scanBarCode()">Scan</button>
-    <button class="btn btn-primary" ng-click="addscanBarCode()">Add</button>
     <button class="btn btn-primary" ng-click="scanClean()">Clean Data</button>
     <button class="btn btn-primary" ng-click="scanBad()">Stop Scan</button>
-    <div class="footer">
-        <div class="scan-alert">
-            <h1>Last scanned product: {{model.lastScanned}}</h1>
+    <div class="footer panel panel-default">
+        <div class="scan-alert panel-heading">
+            <h1>Last scanned product: </h1>
+            <big>{{model.lastScanned}}</big>
         </div>
-        <div class="list-container">
+        <div class="scrollable-content scroll-container">
 
             <div class="item-layout" ng-repeat="item in model.scanned">
-                <div>{{item.code}}</div>
+                <div class="list-group-item">
+                    {{item.code}}
+                    <i class="fa fa-chevron-right"></i>
+                </div>
+
             </div>
         </div>
     </div>
